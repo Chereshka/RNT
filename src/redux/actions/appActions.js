@@ -31,13 +31,12 @@ export const loadPosts = () => {
                 const user = usersReply.data.find((user) => (post.userId === user.id));
                 return { ...post, user };
             });
-            console.log(postWithUserData[0]);
             dispatch(setPosts(postWithUserData));
 
             dispatch(setIsLoading(false));
 
         } catch (error) {
-            console.log("WTF", error)
+            console.log("error", error)
         }
     }
 };

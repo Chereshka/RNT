@@ -6,6 +6,7 @@ import {
     KeyboardAvoidingView,
     Keyboard,
     TouchableWithoutFeedback,
+    Alert
 } from "react-native";
 
 import { images } from "../../assets/images/images";
@@ -33,14 +34,14 @@ export default Autorization = ({ navigation }) => {
 
     tryLogin = async () => {
 
-        dataService.login({ login: login, password: password })
+        dataService.login({ login: login.toLowerCase(), password: password })
             .then((res) => {
 
                 if (res.data.success) {
                     loadMenu()
                     navigation.replace('MobPosts')
                 } else {
-                    alert(res.data.error)
+                    Alert.alert(res.data.error)
                 }
 
             })
@@ -96,7 +97,7 @@ export default Autorization = ({ navigation }) => {
                     </View>
                 </KeyboardAvoidingView>
             </TouchableWithoutFeedback>
-        </View >
+        </View>
 
     );
 

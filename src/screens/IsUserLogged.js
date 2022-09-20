@@ -20,13 +20,8 @@ export default IsUserLogged = ({ navigation }) => {
 
   const run = async () => {
 
-    // loadMenu();
-    // return
-    // await dataService.logOut();
 
     let res = await dataService.loggedIn();
-    // console.log('res', res)
-    // return
 
     if (res.success) {
       loadMenu();
@@ -37,9 +32,7 @@ export default IsUserLogged = ({ navigation }) => {
   }
 
   useEffect(() => {
-    console.log('IsUserLogged')
     run();
-
   }, []);
 
 

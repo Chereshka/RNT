@@ -10,8 +10,12 @@ class DataService {
     }
 
     login = async data => {
-        await setToken(JSON.stringify(data));
-        return { data: { success: { profile: {} } } }
+        if (data.login === 'nik' && data.password === 'nik') {
+            await setToken(JSON.stringify(data));
+            return { data: { success: { profile: {} } } }
+        }
+
+        return { data: { error: 'incorrect login or password' } };
     };
 
     logOut = async () => {

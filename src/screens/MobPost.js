@@ -51,8 +51,9 @@ export default MobPosts = ({ navigation }) => {
                             />
                             {isTabletLayout &&
                                 <KText
-                                    text={`Title: ${item.body}`}
+                                    text={`${item.body.split('\n').join('\\n')}`}
                                     style={[styles.postText, styles.lastElement]}
+                                    numberOfLines={4}
                                 />
                             }
                         </View>
