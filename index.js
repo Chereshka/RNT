@@ -4,6 +4,8 @@
 
 import { AppRegistry } from 'react-native';
 import App from './App';
+import { registerRootComponent } from "expo";
+
 import { name as appName } from './app.json';
 import { Provider } from 'react-redux';
 
@@ -15,4 +17,9 @@ const RNRedux = () => (
     </Provider>
 )
 
-AppRegistry.registerComponent(appName, () => RNRedux);
+if (Platform.OS == "android") {
+    registerRootComponent(RNRedux);
+  } else {
+    AppRegistry.registerComponent(appName, () => RNRedux);
+  }
+// AppRegistry.registerComponent(appName, () => RNRedux);
