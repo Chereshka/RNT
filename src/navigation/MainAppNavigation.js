@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Dimensions, Image, Touchable, TouchableOpacity } from 'react-native';
-import { createNativeStackNavigator, TransitionPresets } from '@react-navigation/native-stack';
-
+// import { createNativeStackNavigator, TransitionPresets } from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { images } from '../../assets/images/images';
 

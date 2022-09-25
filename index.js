@@ -20,6 +20,8 @@ const RNRedux = () => (
 if (Platform.OS == "android") {
     registerRootComponent(RNRedux);
   } else {
-    AppRegistry.registerComponent(appName, () => RNRedux);
+    registerRootComponent(RNRedux);
+
+    // AppRegistry.registerComponent(appName, () => RNRedux);
   }
 // AppRegistry.registerComponent(appName, () => RNRedux);
